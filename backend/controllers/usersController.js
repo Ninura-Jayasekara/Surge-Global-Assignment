@@ -1,7 +1,10 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
+
+//import mongoose model
 const User = require('../models/userModel')
+
 
 // Create new user (by admin)
 
@@ -74,11 +77,15 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 })
 
+
+
 // Get user data
 
 const getUser = asyncHandler(async (req, res) => {
   res.status(200).json(req.user)
 })
+
+
 
 // Generate JWT
 const generateToken = (id) => {
@@ -86,6 +93,8 @@ const generateToken = (id) => {
     expiresIn: '1h',
   })
 }
+
+
 
 //fetch all students
 const fetchStudents = asyncHandler(async (req,res) => {
@@ -96,6 +105,8 @@ const fetchStudents = asyncHandler(async (req,res) => {
       console.log(err);
   })
 })
+
+
 
 //fetch by id
 
@@ -113,6 +124,8 @@ const fetchId = asyncHandler(async(req, res)=>{
       res.status(500).send({status: "Error with get student", error: err.message});
   })
 })
+
+
 
 //update student
 const updateStudent = asyncHandler(async (req, res) => {
@@ -150,6 +163,8 @@ const updateStudent = asyncHandler(async (req, res) => {
   });
 }
 })
+
+
 
 module.exports = {
   createUser,
