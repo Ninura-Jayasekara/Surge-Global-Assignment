@@ -30,12 +30,12 @@ export default function FetchAllStudents(){
     <Navbar/>
   
     <div>
-    <center>
-        <h1 className='heading'>Administration</h1>
-    </center>
-    <center>
-        <h2 className='heading'>Students</h2>
-    </center>
+        <center>
+            <h1 className='heading'>Administration</h1>
+        </center>
+        <center>
+            <h2 className='heading'>Students</h2>
+        </center>
     
     <div>
         <table className="table table-striped table-hover table-sm caption-top"  style={{  background: "#FFFFFF" }}>
