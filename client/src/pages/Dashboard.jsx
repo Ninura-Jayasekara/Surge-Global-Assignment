@@ -7,6 +7,9 @@ import Spinner from '../Components/Spinner'
 import { getNotes, reset } from '../features/notes/notesSlice'
 
 function Dashboard() {
+
+  //*Students dashboard is a page for adding and display added notes
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -36,11 +39,13 @@ function Dashboard() {
   }
 
   return (
+
     <>
       <section className='heading'>
         
         <h1>Welcome {user && user.name}</h1>
         <p>Notes Library</p>
+        
       </section>
 
       <NoteForm />
