@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 const asyncHandler = require('express-async-handler')
 
+//import mongoose models
+
 const Note = require('../models/notesModel')
 const User = require('../models/userModel')
+
 
 // Fetch notes
 
@@ -11,6 +14,8 @@ const getNotes = asyncHandler(async (req, res) => {
 
   res.status(200).json(notes)
 })
+
+
 
 // Create Note
 
@@ -28,6 +33,8 @@ const createNote = asyncHandler(async (req, res) => {
 
   res.status(200).json(note)
 })
+
+
 
 // Update note
 
@@ -57,6 +64,8 @@ const updateNote = asyncHandler(async (req, res) => {
 
   res.status(200).json(updateNote)
 })
+
+
 
 // Delete notes
 
@@ -88,6 +97,8 @@ const deleteNote = asyncHandler(async (req, res) => {
 
   res.status(200).json({ id: req.params.id })
 })
+
+
 
 module.exports = {
   getNotes,
