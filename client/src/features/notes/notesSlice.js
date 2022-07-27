@@ -9,6 +9,8 @@ const initialState = {
   message: '',
 }
 
+//* create async thunk to accept actions and a function which returns promise and action type based on that promise
+
 // Create new note
 export const createNote = createAsyncThunk(
   'notes/create',
@@ -66,6 +68,8 @@ export const deleteNote = createAsyncThunk(
     }
   }
 )
+
+//creating slice to combined reducer and action
 
 export const noteSlice = createSlice({
   name: 'note',

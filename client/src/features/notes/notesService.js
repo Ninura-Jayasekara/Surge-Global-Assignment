@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+//using constant to router
 const API_URL = '/api/notes/'
 
 // Create new note

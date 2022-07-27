@@ -1,7 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+
+//import service 
 import authService from './authService'
 
 // Get user from localStorage
+
 const user = JSON.parse(localStorage.getItem('user'))
 
 const initialState = {
@@ -11,6 +14,8 @@ const initialState = {
   isLoading: false,
   message: '',
 }
+
+//* create async thunk to accept actions and a function which returns promise and action type based on that promise
 
 // Register user
 export const register = createAsyncThunk(
@@ -66,6 +71,8 @@ export const updateStudent = createAsyncThunk(
 export const logout = createAsyncThunk('auth/logout', async () => {
   await authService.logout()
 })
+
+//creating slice to combined reducer and action
 
 export const authSlice = createSlice({
   name: 'auth',
