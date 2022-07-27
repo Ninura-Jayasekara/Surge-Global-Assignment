@@ -8,6 +8,9 @@ import Spinner from '../Components/Spinner'
 import  Navbar  from '../Components/adminComponent/NavBar';
 
 function Register() {
+
+  //page for register students
+
   const [formData, setFormData] = useState({
     id: '',
     firtName: '',
@@ -76,9 +79,15 @@ function Register() {
     return <Spinner />
   }
 
+
+
   return (
-    <>
+
+
+    <div>
+
     <Navbar/>
+    
       <section className='heading'>
         <h4>
           <FaUser /> Register
@@ -195,7 +204,7 @@ function Register() {
           </div>
         </form>
       </section>
-    </>
+    </div>
   )
 }
 

@@ -7,6 +7,9 @@ import { updateStudent, reset } from '../features/auth/authSlice'
 import Spinner from '../Components/Spinner'
 
 function UpdateStudent() {
+
+  //page for update students details
+
   const [formData, setFormData] = useState({
     firtName: '',
     lastName: '',
@@ -62,8 +65,10 @@ function UpdateStudent() {
     return <Spinner />
   }
 
+
   return (
-    <>
+
+    <div>
     
       <section className='heading'>
         <h4>
@@ -138,7 +143,7 @@ function UpdateStudent() {
           </div>
         </form>
       </section>
-    </>
+    </div>
   )
   }
 

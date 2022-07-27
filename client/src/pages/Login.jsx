@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../Components/Spinner'
 
 function Login() {
+
+  //* login page for students
+  
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -23,7 +25,6 @@ function Login() {
 
   useEffect(() => {
     if (isError) {
-      //navigate('/')
       alert(message)
 
     }
@@ -58,7 +59,8 @@ function Login() {
   }
 
   return (
-    <>
+    
+    <div>
       <section className='heading'>
         <h1>
           <FaSignInAlt /> Login
@@ -98,7 +100,7 @@ function Login() {
           </div>
         </form>
       </section>
-    </>
+    </div>
   )
 }
 
