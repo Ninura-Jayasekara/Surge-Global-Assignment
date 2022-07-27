@@ -9,7 +9,7 @@ This project is assignment purposed fullstack JavaScript applications running on
 
 **MongoDB** is the database using Mongoose with this project.
 
-###Roles
+## Roles
 There are two roles in this project called user and admin. Usually user is a student.
 After run the app you should select your role.
 Admin can create users, view user details and serach user by name, email or id.
