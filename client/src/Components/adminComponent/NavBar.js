@@ -14,7 +14,7 @@ function Navbar() {
         <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
         <a class="nav-link" href="/register">Create Student</a>
         <a class="nav-link" href="/search">Search</a>
-        <a class="nav-link disabled">Disabled</a>
+        
       </div>
     </div>
   </div>
