@@ -19,15 +19,15 @@ import  Navbar  from './NavBar';
     
   
     const  loadStudentDetails = async () => {
-      await axios.get(`http://localhost:8080/api/users/fetch/${input}`).then((res) => {
+      await axios.get(`http://localhost:8080/api/users/search?q=${input}`).then((res) => {
 
         
-        setID(res.data.student.id);
-        setFirstName(res.data.student.firstName);
-        setLastName(res.data.student.lastName);
-        setEmail(res.data.student.email);
-        setDateOfBirth(res.data.student.dateOfBirth);
-        setMobile(res.data.student.mobile);
+        setID(res.data.students.id);
+        setFirstName(res.data.students.firstName);
+        setLastName(res.data.students.lastName);
+        setEmail(res.data.students.email);
+        setDateOfBirth(res.data.students.dateOfBirth);
+        setMobile(res.data.students.mobile);
         
         
       }).catch((err) => {
@@ -60,7 +60,7 @@ import  Navbar  from './NavBar';
               </div>
           <div>
           <div class="col-auto">
-              <input type="text" id="inputitemNo" class="form-control" 
+              <input type="text" id="input" class="form-control" 
                 minLength={6} maxLength={6} value={input}  placeholder="search here..." required 
                 onChange={(e)=>{
 

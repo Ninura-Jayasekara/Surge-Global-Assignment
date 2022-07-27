@@ -16,6 +16,6 @@ router.post('/', createUser)
 router.post('/login', loginUser)
 router.get('/user', protect, getUser)
 router.get('/fetch', fetchStudents)
-router.get('/fetch/:id', fetchId)
+router.get('/search', fetchId)
 router.patch('/update',  protect, updateStudent)
 module.exports = router

@@ -37,10 +37,6 @@ function Register() {
       toast.error(message)
     }
 
-    if (isSuccess || user) {
-      navigate('/dashboard')
-    }
-
     dispatch(reset())
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
@@ -85,9 +81,8 @@ function Register() {
 
 
     <div>
-
+      
     <Navbar/>
-    
       <section className='heading'>
         <h4>
           <FaUser /> Register

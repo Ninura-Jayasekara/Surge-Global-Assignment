@@ -111,13 +111,25 @@ const fetchStudents = asyncHandler(async (req,res) => {
 //fetch by id
 
 const fetchId = asyncHandler(async(req, res)=>{
-  let inputName = req.params.name;
-  let inputId = req.params.id;
-  let inputEmail = req.params.email;
-  
-  const student = await User.findOne({inputName :User.firstName} || {inputId : User.id} || {inputEmail : User.email})
-  .then((student)=>{
-      res.status(200).send({status: "Student fetched",student});
+  let q = req.query.q;
+  let Id = null ;
+  let filter = [];
+
+
+  if (!isNaN(q)){
+    filter.push({id : Number(q)})
+  }
+  else
+  {
+    filter.push(...[{firstName:q},{email:q}])
+  }
+
+  console.log(filter)
+
+  User.findOne({$or: filter} )
+  .then((students)=>{
+      console.log(students)
+      res.status(200).send({status: "Student fetched",students});
   
   }).catch((err)=>{
       console.log(err.message);

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const asyncHandler = require('express-async-handler')
+const bson = require('bson')
 
 //import mongoose models
 
@@ -70,7 +71,10 @@ const updateNote = asyncHandler(async (req, res) => {
 // Delete notes
 
 const deleteNote = asyncHandler(async (req, res) => {
-  const note = await Note.findById(req.params.id)
+  const note = await Note.findOne({_id : bson.ObjectId(req.params.id)})
+
+  console.log(note.user, req.user._id.toString())
+
 
   if (!note) {
     res.status(400)
@@ -84,8 +88,8 @@ const deleteNote = asyncHandler(async (req, res) => {
   }
 
   // Check if the logged in student matches the notes
-  if (note.user.toString() !== req.user.id) {
-    
+  if (note.user !== req.user._id.toString()) {
+    console.log(req.user)
     res.status(401)
     console.log(note.user.toString)
     console.log(req.user.id)
@@ -93,7 +97,7 @@ const deleteNote = asyncHandler(async (req, res) => {
     
   }
 
-  await note.remove()
+  await note.remove().exec()
 
   res.status(200).json({ id: req.params.id })
 })

@@ -31,14 +31,13 @@ const logout = () => {
 }
 
 // Update student
-const updateStudent = async (id, token) => {
+const updateStudent = async (data, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   }
-
-  const response = await axios.patch(API_URL + 'update' +id, config)
+  const response = await axios.patch(API_URL + 'update', data ,config)
 
   return response.data
 }
