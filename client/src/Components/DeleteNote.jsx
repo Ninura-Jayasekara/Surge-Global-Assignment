@@ -7,10 +7,10 @@ function DeleteNote({ note }) {
   return (
     <div className='note'>
       <div>{new Date(note.createdAt).toLocaleString('en-US')}</div>
-      <h2>{note.title}</h2>
-      <h4>{note.description}</h4>
+        <h2>{note.title}</h2>
+        <h4>{note.description}</h4>
       <button onClick={() => dispatch(deleteNote(note._id))} className='close'>
-        X
+        Delete
       </button>
     </div>
   )
