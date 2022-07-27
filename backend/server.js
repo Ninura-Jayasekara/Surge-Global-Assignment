@@ -6,6 +6,7 @@ const cors = require("cors");
 const connection = require("./db");
 const { errorHandler } = require('./middleware/errorMiddleware');
 
+//import routers
 const userRouter = require('./Routes/userRoutes');
 const noteRouter = require('./Routes/noteRoutes');
 
