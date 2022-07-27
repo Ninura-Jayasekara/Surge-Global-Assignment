@@ -4,7 +4,6 @@ const app = express();
 const cors = require("cors");
 
 const connection = require("./db");
-const { errorHandler } = require('./middleware/errorMiddleware');
 
 //import routers
 const userRouter = require('./Routes/userRoutes');
@@ -17,7 +16,6 @@ connection();
 // middlewares
 app.use(express.json());
 app.use(cors());
-app.use(errorHandler);
 
 
 // routes
