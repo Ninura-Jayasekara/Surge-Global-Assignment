@@ -9,6 +9,8 @@ This project is assignment purposed fullstack JavaScript applications running on
 
 **MongoDB** is the database using Mongoose with this project.
 
+***
+
 ## Roles
 There are two roles in this project called user and admin. Usually user is a student.
 After run the app you should select your role.
@@ -16,9 +18,21 @@ Admin can create users, view user details and serach user by name, email or id.
 Students can update their profiles, add notes, update notes and delete notes.
 This app is user token base authentication.
 
-## Commands
-The package.json provides all the commands needed to test and run this application.
-- **npm install** install all dependencies for the server and the client.
-- **npm run build** builds the static files for the React app.
-- **npm start** starts the server and client sides.
+***
+
+## Run application
+
+1. Clone the Repository.
+2. Upload the database schema to your localhost database.
+3. Update the .env file accordingly.
+4.  Run ``` npm install ``` (you should install both server side and the client side)
+5. Run the project on ``` npm start ```.
+
 - **npm run react-dev** starts the React app in development mode on http://localhost:3000. Only works if the server is started separately.
+***
+
+* Enjoy!
+
+Unit testing will be implemented soon.
+
+## Thank You!
