@@ -23,12 +23,17 @@ function Header() {
       <ul>
         {user ? (
           <ul>
+            <div>
             <a className='btn' href='/update'>
               Update
               </a>
+              </div>
+              
+              <div>
             <button className='btn' onClick={onLogout}>
               <FaSignOutAlt /> Logout
             </button>
+            </div>
           </ul>
           
         ) : (

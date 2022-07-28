@@ -1,28 +1,28 @@
-/* eslint-disable no-console*/
-'use strict';
+// const mongoose = require('mongoose');
+// const db = require('./db')
+// mongoose.connect(db);
 
-import User from './models/userModel';
+// const User = require('./models/userModel');
 
-import { SEEDER_USER } from './configs';
+// User.collection.drop();
+// Event.collection.drop();
 
-(async () => {
-    res.send({status: "creating user"});
+// // Hash password
+// const salt = await bcrypt.genSalt(10)
+// const hashedPassword = await bcrypt.hash(process.env.PASSWORD, salt)
 
-    let user = User.findOne({'email': SEEDER_USER.EMAIL});
 
-    if (!user) {
-        try {
-            await User.create({
-                'email': SEEDER_USER.EMAIL,
-                'password': SEEDER_USER.PASSWORD,
-                'accountType': userRoles.ADMIN
-            });
-            res.send({status: " seed user created"});
-        } catch (e) {
-            res.send({status: "seed user available"});
-        }
-    } else {
-        res.send({status: "seed user available"});
-    }
-    
-})();
+// User.create([{
+//   'email':process.env.EMAIL,
+//   'password' : process.env.hashedPassword,
+//   'accountType':"admin"
+// }])
+// .then(user => {
+//   console.log(`${user.length} admin created`);
+// })
+// .catch((err) => {
+//   console.log(err);
+// })
+// .finally(() => {
+//   mongoose.connection.close();
+// });

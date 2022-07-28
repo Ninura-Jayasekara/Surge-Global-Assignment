@@ -4,14 +4,11 @@ const app = express();
 const cors = require("cors");
 
 const connection = require("./db");
-// import seedUser from './seedUser';
 
-//import routers
+//import routers by creating constant variables
 const userRouter = require('./Routes/userRoutes');
 const noteRouter = require('./Routes/noteRoutes');
 
-//create seeder user
-// seedUser();
 
 // database connection
 connection();
